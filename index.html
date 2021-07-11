@@ -10,25 +10,45 @@
 <body>
     <header id="title" class="center">Weather Dashboard</header>
 
-    <form id="citySelectionForm">
-        <h2 id="searchBarText">Search For A City:</h2>
-        <input id="cityTextBox" type="text" />
-        <button id="searchButton">Search</button>
-    </form>
+
+    <div id="container">
+
+        <form id="citySelectionForm">
+
+            <h2 id="searchBarText">Search For A City:</h2>
+
+            <input id="cityTextBox" type="text" />
+            <button id="searchButton">Search</button>
+
+        </form>
+
+        
+
+        <section id="mainWeatherCard">
+            <h2 id="mainCardCity"></h2>
+
+            <ul id="mainCardList">
+                <li>Temp: <span id="mainTemp"></span></li>
+                <li>Wind: <span></span></li>
+                <li>Humidity: <span></span></li>
+                <li>UV Index: <span></span></li>
+            </ul>
+        </section>
+
+    </div>            
 
     <section>
-        <ul class="list">
+        <ul id="cityList">
+            <li>Placeholder</li>
             <li>Placeholder</li>
         </ul>
     </section>
 
-                    
     <script  
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
 
-    <script src="Assets/JS/api.js"></script>
     <script src="Assets/JS/script.js"></script>
 </body>
 </html>

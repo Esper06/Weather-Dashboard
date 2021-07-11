@@ -2,8 +2,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+li {
+    margin-bottom: 5px;
+}
+
 .center {
     text-align: center;
+}
+
+#container {
+    display: flex;
 }
 
 #title {
@@ -17,6 +25,31 @@
     font-size: 200%;
 }
 
-.list {
+#cityList {
+    top: 230px;
+    margin-bottom: 70%;
     list-style: none;
+    position: absolute;
+
+}
+
+#mainWeatherCard {
+    margin-left: 2%;
+    border: black;
+    border-style: solid;
+    height: 15em;
+    width: 83%;
+    margin-top: 10px;
+    float: right;
+    display: block;
+}
+
+#mainCardList li {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#mainCardCity {
+    margin-top: 10px;
+    font-size: 250%;
 }
