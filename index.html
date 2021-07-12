@@ -10,9 +10,9 @@
 <body>
     <header id="title" class="center">Weather Dashboard</header>
 
-
+            <!-- Container for the entire website with the exception of the city list and small weather cards -->
     <div id="container">
-
+            <!---form for the search box and button -->
         <form id="citySelectionForm">
 
             <h2 id="searchBarText">Search For A City:</h2>
@@ -23,10 +23,10 @@
         </form>
 
         
-
+        <!-- Section for the large block, showing today's weather -->
         <section id="mainWeatherCard">
             <h2 id="mainCardCity"></h2>
-
+                <!-- list of all the different weather effects -->
             <ul id="mainCardList">
                 <li>Temp: <span id="mainTemp"></span></li>
                 <li>Wind: <span id="mainWind"></span> MPH</li>
@@ -34,8 +34,54 @@
                 <li>UV Index: <span></span></li>
             </ul>
         </section>
+    
 
     </div>            
+
+     <!-- section for all the smaller weather cards for the future weather -->
+     <section id="futureWeatherContainer">
+
+        <div id="futWeatherOne">
+            <h4>Placeholder</h4>
+            <li>Temp: <span id="futTempOne"></span></li>
+            <li>Wind: <span id="futWindOne"></span> MPH</li>
+            <li>Humidity: <span id="futHumidOne"></span></li>
+            <li>UV Index: <span></span></li>
+        </div>
+
+        <div id="futWeatherTwo">
+            <h4></h4>
+            <li>Temp: <span id="futTempTwo"></span></li>
+            <li>Wind: <span id="futWindTwo"></span> MPH</li>
+            <li>Humidity: <span id="futHumidTwo"></span></li>
+            <li>UV Index: </li>
+        </div>
+
+        <div id="futWeatherThree">
+            <h4></h4>
+            <li>Temp: <span id="futTempThree"></span></li>
+            <li>Wind: <span id="futWindThree"></span> MPH</li>
+            <li>Humidity: <span id="futHumidThree"></span></li>
+            <li>UV Index: </li>
+        </div>
+
+        <div id="futWeatherFour">
+            <h4></h4>
+            <li>Temp: <span id="futTempFour"></span></li>
+            <li>Wind: <span id="futWindFour"></span> MPH</li>
+            <li>Humidity: <span id="futHumidFour"></span></li>
+            <li>UV Index: </li>
+        </div>
+
+        <div id="futWeatherFive">
+            <h4></h4>
+            <li>Temp: <span id="futTempFive"></span></li>
+            <li>Wind: <span id="futWindFive"></span> MPH</li>
+            <li>Humidity: <span id="futHumidFive"></span></li>
+            <li>UV Index: </li>
+        </div>
+
+    </section>
 
     <section>
         <ul id="cityList">

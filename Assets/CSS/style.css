@@ -1,16 +1,33 @@
+/* Sets the font to be used */
+
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
+/* Centers text */
 .center {
     text-align: center;
 }
 
+
+/* Makes the element invisible */
+.hidden {
+    display: none;
+}
+
+/* Makes the item visible */
+.show {
+    display: auto;
+}
+
+
+/* Adds flex to the main container of all elements */
 #container {
     display: flex;
 }
 
+/* Styles the header, adds a gradient and increases font size */
 #title {
     background-image: linear-gradient(to left, lightblue, blue);
     color: white;
@@ -18,10 +35,13 @@
     font-size: 400%;
 }
 
+/* Increases the size of the "search for a city" prompt */
 #searchBarText {
     font-size: 200%;
 }
 
+
+/* Positions the list of the previously searched items and removes the bullet points */
 #cityList {
     top: 230px;
     margin-bottom: 70%;
@@ -30,6 +50,7 @@
 
 }
 
+/* Poistions and styles todays forecast */
 #mainWeatherCard {
     margin-left: 2%;
     border: black;
@@ -41,16 +62,21 @@
     display: block;
 }
 
+/* Styles the list items inside the main forecast and positions them */
 #mainCardList li {
     list-style: none;
     margin-bottom: 20px;
 }
 
+
+/* Styles the name of the city that appears on the main card */
 #mainCardCity {
     margin-top: 10px;
     font-size: 250%;
 }
 
+
+/* Styles the list of previously searched cities and positions them */
 #cityList li {
     background-color: cornflowerblue;
     color: white;
@@ -61,4 +87,31 @@
     font-size: 20px;
     border-radius: 25px;
     margin-bottom: 5px;
+}
+
+/* Positions the container for the future weather conditions */
+#futureWeatherContainer{
+    display: flex;
+    margin-left: 16.3%;
+    margin-top: 10px;
+}
+
+/* Styles and positions the cards inside the container for the future weather forecasts */ 
+#futureWeatherContainer div {
+    border: black;
+    border-style: solid;    
+    margin: 5px;
+    width: 20%;
+    height: 300px;
+}
+
+/* Styles and positions the list items inside the future weather forecast cards */
+#futureWeatherContainer div li {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+/* Targets the h4 element inside the future forecasts and pushes the lists down a bit  */
+#futureWeatherContainer div h4 {
+    margin-bottom: 50px;
 }

@@ -8,9 +8,29 @@ var mainTemp = document.getElementById("mainTemp") //selects the span element in
 var mainWind = document.getElementById("mainWind") // selects the span element inside the list item, inside the main card div
 var mainHumid = document.getElementById("mainHumid") // same as above 
 
+var futTempOne = document.getElementById("futTempOne")
+var futTempTwo = document.getElementById("futTempTwo")
+var futTempThree = document.getElementById("futTempThree") //selects the elements inside the future forecasts for the temperature
+var futTempFour = document.getElementById("futTempFour")
+var futTempFive = document.getElementById("futTempFive")
+
+var futWindOne = document.getElementById("futWindOne")
+var futWindTwo = document.getElementById("futWindTwo")
+var futWindThree = document.getElementById("futWindThree") //selects the elements inside the future forecasts for the Wind speed
+var futWindFour = document.getElementById("futWindFour")
+var futWindFive = document.getElementById("futWindFive")
+
+var futHumidOne = document.getElementById("futHumidOne")
+var futHumidTwo = document.getElementById("futHumidTwo")
+var futHumidThree = document.getElementById("futHumidThree") //selects the elements inside the future forecasts for humidity
+var futHumidFour = document.getElementById("futHumidFour")
+var futHumidFive = document.getElementById("futHumidFive")
 
 //Some variables we make to be used later on
+
 var endpoint
+var date = new Date //grabs todays date
+
 
 //this function makes a url from the api to be used. The city is a variable that depends on the user
 function generateEndpoint(city) { 
@@ -33,11 +53,31 @@ function makeRequest() {
     return fetch(endpoint).then(function (res) { //fetch url result
         return res.json(); //turn result in object
     })
-    .then(function(data){
-        console.log(data)
+    .then(function(data){ //this functions sets the inner html of the elements as the results from the api
+        //console.log(data)
         mainTemp.innerText = data.list[0].main.temp //sets the inner html of the main temperature span to be whatever the response of the api is
         mainWind.innerText = data.list[0].wind.speed // sets the inner html of the main wind span to be whatever the response of the api is
         mainHumid.innerText = data.list[0].main.humidity //same as above but for humidity
+
+        futTempOne.innerText = data.list[10].main.temp 
+        futWindOne.innerText = data.list[10].wind.speed //sets inner html of the first future forecast card
+        futHumidOne.innerText = data.list[10].main.humidity
+
+        futTempTwo.innerText = data.list[18].main.temp
+        futWindTwo.innerText = data.list[18].wind.speed //sets inner html for the second card
+        futHumidTwo.innerText = data.list[18].main.humidity
+
+        futTempThree.innerText = data.list[26].main.temp
+        futWindThree.innerText = data.list[26].wind.speed //sets inner html for the third card
+        futHumidThree.innerText = data.list[26].main.humidity
+
+        futTempFour.innerText = data.list[34].main.temp
+        futWindFour.innerText = data.list[34].wind.speed //sets inner html for the fourth card
+        futHumidFour.innerText = data.list[34].main.humidity
+
+        futTempFive.innerText = data.list[39].main.temp
+        futWindFive.innerText = data.list[39].wind.speed   //sets inner html for the fifth card
+        futHumidFive.innerText = data.list[39].main.humidity
     })
 
 }
@@ -58,6 +98,10 @@ function addToList (city) {
     localStorage.setItem("City", city) //adds the searched city to local storage
 
 }
+
+
+
+
 
 searchButton.addEventListener('click', generateEndpoint) //creates the url when the button is clicked
 searchButton.addEventListener('click', makeRequest) //makes a request to the url gotten from generateEndpoint once the button is clicked
