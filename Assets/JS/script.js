@@ -65,7 +65,7 @@ function makeRequest() {
         return res.json(); //turn result in object
     })
     .then(function(data){ //this functions sets the inner html of the elements as the results from the api
-        console.log(data)
+        //console.log(data)
         mainTemp.innerText = data.list[0].main.temp //sets the inner html of the main temperature span to be whatever the response of the api is
         mainWind.innerText = data.list[0].wind.speed // sets the inner html of the main wind span to be whatever the response of the api is
         mainHumid.innerText = data.list[0].main.humidity //same as above but for humidity
@@ -96,10 +96,30 @@ function makeRequest() {
                                     //This is so I can use the data from this function in another function later
         lat = data.city.coord.lat
 
+
         //Next we use the data to get the icons for the weather so we can display them
 
+        var iconCodeMain = data.list[0].weather[0].icon
+        var iconCodeOne = data.list[10].weather[0].icon
+        var iconCodeTwo = data.list[18].weather[0].icon
+        var iconCodeThree = data.list[26].weather[0].icon //gets the weather icon id for each card and assigns it to a variable
+        var iconCodeFour = data.list[34].weather[0].icon
+        var iconCodeFive = data.list[39].weather[0].icon
         
+        var iconMainUrl = "http://openweathermap.org/img/w/" + iconCodeMain + ".png";
+        var iconOneUrl = "http://openweathermap.org/img/w/" + iconCodeOne + ".png";
+        var iconTwoUrl = "http://openweathermap.org/img/w/" + iconCodeTwo + ".png";
+        var iconThreeUrl = "http://openweathermap.org/img/w/" + iconCodeThree + ".png";
+        var iconFourUrl = "http://openweathermap.org/img/w/" + iconCodeFour + ".png";
+        var iconFiveUrl = "http://openweathermap.org/img/w/" + iconCodeFive + ".png";
         
+        mainIcon.src = iconMainUrl;
+        iconOne.src = iconOneUrl;
+        iconTwo.src = iconTwoUrl;
+        iconThree.src = iconThreeUrl;
+        iconFour.src = iconFourUrl;
+        iconFive.src = iconFiveUrl;
+
     })
     .then(function getUV() { //this long string of .then statements is so that after we get the lat and lon of the city we can then put it into another api
         //we set endpointUV to have the value of the new api url, and have the lat and lon variables equal whatever the city lat lon was
