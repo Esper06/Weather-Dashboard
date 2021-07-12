@@ -7,8 +7,8 @@ var selectedCity = document.getElementById("mainCardCity") //selects the large t
 var mainTemp = document.getElementById("mainTemp") //selects the span element inside the list item, inside the main card div 
 var mainWind = document.getElementById("mainWind") // selects the span element inside the list item, inside the main card div
 var mainHumid = document.getElementById("mainHumid") // same as above 
-var mainUV = document.getElementById("mainUV")
-var mainIcon = document.getElementById("mainIcon")
+var mainUV = document.getElementById("mainUV") //selects the UV index in the main card
+var mainIcon = document.getElementById("mainIcon")  //selects the weather icon in the main card
 
 var futTempOne = document.getElementById("futTempOne")
 var futTempTwo = document.getElementById("futTempTwo")
@@ -174,6 +174,8 @@ function addToList (city) {
 
     localStorage.setItem("City", city) //adds the searched city to local storage
 
+    var cityListItems = document.querySelector("li");
+    cityListItems.id = "cityListItems";
 }
 
 //This functions creates and assigns dates to each of the cards
@@ -234,6 +236,16 @@ function setDates () {
     document.getElementById("futDateFive").innerHTML = futTextFive;
 }
 
+
+function accessPreviousCity () {
+
+    var city = document.getElementsById("cityListItems").innerHTML
+
+    console.log(city)
+}
+
+
+document.getElementById("cityListItems").onclick = function() {accessPreviousCity};
 
 searchButton.addEventListener('click', generateEndpoint) //creates the url when the button is clicked
 searchButton.addEventListener('click', makeRequest) //makes a request to the url gotten from generateEndpoint once the button is clicked
