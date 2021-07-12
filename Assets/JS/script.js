@@ -7,6 +7,7 @@ var selectedCity = document.getElementById("mainCardCity") //selects the large t
 var mainTemp = document.getElementById("mainTemp") //selects the span element inside the list item, inside the main card div 
 var mainWind = document.getElementById("mainWind") // selects the span element inside the list item, inside the main card div
 var mainHumid = document.getElementById("mainHumid") // same as above 
+var mainDate = document.getElementById("mainCardDate") //selects the span inside the header for the main card
 
 var futTempOne = document.getElementById("futTempOne")
 var futTempTwo = document.getElementById("futTempTwo")
@@ -99,10 +100,21 @@ function addToList (city) {
 
 }
 
-
+function setDates () {
+    var currentDate = new Date;
+    
+    day = currentDate.getDate(),
+    month = currentDate.getMonth() + 1,
+    year = currentDate.getFullYear(),
+    
+    text = (day + "/" + month + "/" + year);
+    
+    mainDate.innerText = text;
+}
 
 
 
 searchButton.addEventListener('click', generateEndpoint) //creates the url when the button is clicked
 searchButton.addEventListener('click', makeRequest) //makes a request to the url gotten from generateEndpoint once the button is clicked
 searchButton.addEventListener('click', addToList) // adds the searched city to the top of the recent searched items list. Also saves it to local storage
+searchButton.addEventListener('click', setDates) //adds the correct dates to the forecast cards
