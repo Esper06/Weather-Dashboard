@@ -65,7 +65,7 @@
 /* Styles the list items inside the main forecast and positions them */
 #mainCardList li {
     list-style: none;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 
@@ -114,4 +114,31 @@
 /* Targets the h4 element inside the future forecasts and pushes the lists down a bit  */
 #futureWeatherContainer div h4 {
     margin-bottom: 50px;
+}
+
+
+/* Targets the date in the main card and moves it up closer to the city name */
+#mainCardDate {
+  margin-top: -30px;
+}
+
+/* Targets the dates in the smaller cards, makes the text larger and moves the, closer to the top of their containers */
+.futDates {
+    font-size: 30px;
+    margin-top: 0px;
+}
+
+.lowUV {
+    background-color: lime;
+    border-radius: 5px;
+}
+
+.mediumUV {
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.highUV {
+    background-color: orangered;
+    border-radius: 5px;
 }
