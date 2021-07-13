@@ -109,17 +109,30 @@ function makeRequest() {
         var iconMainUrl = "http://openweathermap.org/img/w/" + iconCodeMain + ".png";
         var iconOneUrl = "http://openweathermap.org/img/w/" + iconCodeOne + ".png";
         var iconTwoUrl = "http://openweathermap.org/img/w/" + iconCodeTwo + ".png";
-        var iconThreeUrl = "http://openweathermap.org/img/w/" + iconCodeThree + ".png";
+        var iconThreeUrl = "http://openweathermap.org/img/w/" + iconCodeThree + ".png"; //set the url to go to the correct link depending on the weather
         var iconFourUrl = "http://openweathermap.org/img/w/" + iconCodeFour + ".png";
         var iconFiveUrl = "http://openweathermap.org/img/w/" + iconCodeFive + ".png";
         
         mainIcon.src = iconMainUrl;
         iconOne.src = iconOneUrl;
         iconTwo.src = iconTwoUrl;
-        iconThree.src = iconThreeUrl;
+        iconThree.src = iconThreeUrl; //we assign the src attribute to the url of these variables
         iconFour.src = iconFourUrl;
         iconFive.src = iconFiveUrl;
 
+        mainIcon.classList.remove('hidden');
+        iconOne.classList.remove('hidden');
+        iconTwo.classList.remove('hidden');  //we remove the hidden class from the images
+        iconThree.classList.remove('hidden');
+        iconFour.classList.remove('hidden');
+        iconFive.classList.remove('hidden');
+
+        mainIcon.classList.add('show');
+        iconOne.classList.add('show');
+        iconTwo.classList.add('show');  //we add the show class so that the images so they appear
+        iconThree.classList.add('show');
+        iconFour.classList.add('show');
+        iconFive.classList.add('show');
     })
     .then(function getUV() { //this long string of .then statements is so that after we get the lat and lon of the city we can then put it into another api
         //we set endpointUV to have the value of the new api url, and have the lat and lon variables equal whatever the city lat lon was
@@ -174,8 +187,6 @@ function addToList (city) {
 
     localStorage.setItem("City", city) //adds the searched city to local storage
 
-    var cityListItems = document.querySelector("li");
-    cityListItems.id = "cityListItems";
 }
 
 //This functions creates and assigns dates to each of the cards
@@ -237,15 +248,6 @@ function setDates () {
 }
 
 
-function accessPreviousCity () {
-
-    var city = document.getElementsById("cityListItems").innerHTML
-
-    console.log(city)
-}
-
-
-document.getElementById("cityListItems").onclick = function() {accessPreviousCity};
 
 searchButton.addEventListener('click', generateEndpoint) //creates the url when the button is clicked
 searchButton.addEventListener('click', makeRequest) //makes a request to the url gotten from generateEndpoint once the button is clicked
